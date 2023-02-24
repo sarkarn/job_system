@@ -11,11 +11,11 @@ public class JobTaskInstanceServiceImpl implements JobTaskInstanceService{
     @Autowired
     JobTaskInstanceRepository jobTaskInstanceRepository;
     public JobTaskInstance createJobInstance(JobTaskInstance jobTaskInstance){
-        return jobTaskInstanceRepository.createJobTaskInstance(jobTaskInstance);
+        return jobTaskInstanceRepository.save(jobTaskInstance);
     }
 
     public JobTaskInstance updateJobInstance(JobTaskInstance jobTaskInstance){
-        return jobTaskInstanceRepository.updateJobTaskInstance(jobTaskInstance);
+        return jobTaskInstanceRepository.save(jobTaskInstance);
     }
 
     public void deleteTaskInstanceOlderThanNinetyDays() {

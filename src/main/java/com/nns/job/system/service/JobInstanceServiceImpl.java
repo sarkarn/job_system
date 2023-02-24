@@ -11,11 +11,11 @@ public class JobInstanceServiceImpl implements JobInstanceService {
     @Autowired
     JobInstanceRepository jobInstanceRepository;
     public JobInstance createJobInstance(JobInstance jobInstance){
-        return jobInstanceRepository.createJobInstance(jobInstance);
+        return jobInstanceRepository.save(jobInstance);
     }
 
     public JobInstance updateJobInstance(JobInstance jobInstance){
-        return jobInstanceRepository.updateJobInstance(jobInstance);
+        return jobInstanceRepository.save(jobInstance);
     }
 
     public void deleteJobInstanceOlderThanNinetyDays() {

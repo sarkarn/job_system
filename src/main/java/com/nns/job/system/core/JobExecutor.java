@@ -37,13 +37,15 @@ public class JobExecutor {
         this.jobCode = jobCode;
     }
 
-    public void add(JobTaskExecutor jobTaskExecutor){
-        if("Y".equalsIgnoreCase(jobEntity.getIsActive())) {
+    public void add(Task task){
+        //TODO Uncomment this in the real application
+       // if("Y".equalsIgnoreCase(jobEntity.getIsActive())) {
+            JobTaskExecutor jobTaskExecutor = new JobTaskExecutor(task);
             executorList.add(jobTaskExecutor);
-        }
+       // }
     }
 
-    public void executeTask(ExecutorService executorService) {
+    public void executeJob(ExecutorService executorService) {
         jobTaskInstanceService.deleteTaskInstanceOlderThanNinetyDays();
         jobInstanceService.deleteJobInstanceOlderThanNinetyDays();
         if(jobInstancePreExecuteCallback != null) {
@@ -53,6 +55,7 @@ public class JobExecutor {
 
         List<Future<JobTaskResult>> futureJobTaskResultList = new ArrayList<>();
         for(JobTaskExecutor taskExecutor : executorList){
+            System.out.println("@11111");
             taskExecutor.setJobInstanceId(jobInstance.getId());
             taskExecutor.setJobId(jobEntity.getId());
             Future<JobTaskResult>

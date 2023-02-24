@@ -19,7 +19,7 @@ public class JobInstance {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "JOB_ID", nullable = false)
+    @Column(name = "JOB_ID")
     private Long jobId;
 
     @Column(name = "STATUS")
