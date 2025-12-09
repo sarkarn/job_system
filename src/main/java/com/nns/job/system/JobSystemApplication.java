@@ -9,10 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-/**
- * @author eostermueller@gmail.com
- *
- */
+
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.nns.job.system"})
 public class JobSystemApplication extends SpringBootServletInitializer {
